@@ -1,4 +1,4 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/base2.html' %}
 
 {% block content %}
 	<div class="container">
@@ -13,5 +13,8 @@
 		        <p align="justify">{{ post.text|linebreaksbr }}</p>
 		    </div>
 	    </div>
+	    {% if user.is_authenticated %}
+	    	<a class="btn btn-primary" href="{% url 'post_edit' pk=post.pk %}" style="float: right;">Edit &nbsp;<span class="fa fa-pencil"></span></a>
+	    {% endif %}
 	</div>
 {% endblock %}
