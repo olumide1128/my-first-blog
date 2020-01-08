@@ -14,8 +14,14 @@
             {% if user.is_authenticated %}
                 <div class="text-right">
                     <a href="{% url 'post_new' %}" class="btn btn-sm btn-success mr-4">Add Post <span class="fa fa-plus"></span></a>
+                    <a href="{% url 'logout' %}" class="btn btn-sm btn-info mr-4">Logout <span class="fa fa-sign-out"></span></a>
+                </div>
+            {% else %}
+                <div class="text-right">
+                    <a href="{% url 'login' %}" class="btn btn-sm btn-info mr-4">SignIn <span class="fa fa-user"></span></a>
                 </div>
             {% endif %}
+                
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
         <br>
