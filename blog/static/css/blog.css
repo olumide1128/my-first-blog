@@ -41,6 +41,7 @@ h1, h2, h3, h4 {
 .save{
     float: right;
 }
+
 .post-form{
     width: 60%;
 }
@@ -48,3 +49,11 @@ h1, h2, h3, h4 {
 .post-form textarea, .post-form input {
     width: 100%;
 }
+
+/*.comment-form{
+    width: 50%;
+}
+
+.comment-form textarea, .comment-form input {
+    width: 100%;
+}*/
