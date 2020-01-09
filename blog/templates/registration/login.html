@@ -8,8 +8,16 @@
 	<div style="text-align:center">
 	  <form method="post" id="form_login">
 		    {% csrf_token %}
-		    {{ form.as_p }}
+		    <p>Username: {{ form.username }}</p>
+		    <br>
+		    <p>Password: {{ form.password }}</p>
+		    <br>
 	    <button type="submit">Login</button>
+	    <br>
+	    <br>
+	    {% if form.errors %}
+      		<p class="alert alert-danger mt-4 m-auto" style="width: 25%;">Username or Password not correct!</p>
+  		{% endif %}
 	  </form>
 	</div>
 {% endblock %}

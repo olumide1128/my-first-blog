@@ -14,7 +14,7 @@
             {% if user.is_authenticated %}
                 <div class="text-right">
                     <a href="{% url 'post_new' %}" class="btn btn-sm btn-success mr-4">Add Post <span class="fa fa-plus"></span></a>
-                    <a href="{% url 'post_draft_list' %}" class="btn btn-sm btn-warning mr-4">Unpublished <span class="fa fa-pencil"></span></a>
+                    <a href="{% url 'post_list' %}" class="btn btn-sm btn-danger mr-4">Go Home <span class="fa fa-arrow-left"></span></a>
                     <a href="{% url 'logout' %}" class="btn btn-sm btn-info mr-4">Logout <span class="fa fa-sign-out"></span></a>
                 </div>
             {% else %}
@@ -26,10 +26,11 @@
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
         {% if user.is_authenticated %}
-        <div class="text-right bg-dark border">
-            <p class="mr-4 text-white">Hello {{ user.username }}</p>
-        </div>
+            <div class="text-right bg-dark border">
+                <p class="text-white mr-4">Hello {{ user.username }}</p>
+            </div>
         {% endif %}
+
         <br>
 
         {% block content %}

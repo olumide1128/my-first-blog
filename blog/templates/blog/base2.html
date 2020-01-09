@@ -16,6 +16,11 @@
                 </div>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
+        {% if user.is_authenticated %}
+            <div class="text-right bg-dark border">
+                <p class="text-white mr-4">Hello {{ user.username }}</p>
+            </div>
+        {% endif %}
         <br>
 
         {% block content %}
