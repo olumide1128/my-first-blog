@@ -28,9 +28,9 @@
 			<a class="btn btn-info" style="clear: both;" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
 		</div>
 		<br>
-		{% if post.comments.count > 0 %}
+		{% if post.approved_comments.count > 0 %}
 			{% if user.is_authenticated %}
-				<h3 style="clear: both;">Comments <span>({{ post.comments.count}})</span></h3>
+				<h3 style="clear: both;">Comments <span>({{ post.approved_comments.count}})</span></h3>
 			{% else %}
 				<h3 style="clear: both;">Comments <span>({{ post.approved_comments.count}})</span></h3>
 			{% endif %}
