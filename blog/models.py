@@ -19,6 +19,21 @@ class Post(models.Model):
     def approved_comments(self):
         return self.comments.filter(approved_comment=True)
 
+    def unapproved_comments(self):
+        return self.comments.filter(approved_comment=False)
+
+    def s1Check(self):
+        if(len(self.comments.filter(approved_comment=True)) > 1):
+            return 'Comments'
+        elif(len(self.comments.filter(approved_comment=True)) <=1):
+            return 'Comment'
+
+    def s2Check(self):
+        if(len(self.comments.filter(approved_comment=False)) > 1):
+            return 'Comments'
+        elif(len(self.comments.filter(approved_comment=False)) <=1):
+            return 'Comment'
+
     def __str__(self):
         return self.title
 

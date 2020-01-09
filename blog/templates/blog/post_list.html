@@ -8,7 +8,7 @@
         {% for post in posts %}
             <div class="post">
                 <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                <p style="font-size: 14">Published: <span class="text-muted">{{ post.published_date }}</span> <span class="text-primary">{{ post.approved_comments.count }} Comments</span></p>
+                <p style="font-size: 14">Published: <span class="text-muted">{{ post.published_date }}</span> <span class="text-primary">{{ post.approved_comments.count }} {{ post.s1Check }} </span>{% if post.unapproved_comments.count > 0 %}| <span class="text-danger">{{ post.unapproved_comments.count }} Unapproved {{ post.s2Check }}</span>{% endif %}</p>
                 <p>{{ post.text|linebreaksbr }}</p>
             </div>
         {% endfor %}
